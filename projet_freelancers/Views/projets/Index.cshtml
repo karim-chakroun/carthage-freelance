@@ -1,0 +1,39 @@
+﻿@model IEnumerable<projet_freelancers.Models.projet>
+
+@{
+    ViewBag.Title = "index";
+}
+<br />
+<h1>Pojects&Missions</h1>            
+      <br /> 
+        
+<div class="row">
+    @foreach (var item in Model)
+    {
+    
+        <div class="col-md-4">
+            <h2>@Html.DisplayFor(modelItem => item.titre)</h2>
+
+
+
+            <p>
+                @Html.DisplayFor(modelItem => item.description)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.budget)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.statut_projet)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.date_projet)
+            </p>
+
+            <p>@Html.ActionLink("details", "details", new { id = item.Id }, new { @class = "btn btn-dark", @role = "button" })</p>
+
+
+
+        </div>
+        }
+
+    </div>
